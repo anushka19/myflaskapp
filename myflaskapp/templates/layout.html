@@ -1,0 +1,30 @@
+<!--layout - we cannot repeat html tag,body tag on every single template .So we want a layou that will include the stuff
+and wrap the current view or the curr template Thus it will contain all the common tags. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyFlaskApp</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+
+    {% include 'includes/_navbar.html' %}
+
+    <div class="container">
+
+        {% include 'includes/_messages.html' %}
+        {% block body %} {% endblock %} <!-- as we have this block we can go to home file and extend this block and insert content in here --check home.html file -->
+    </div>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="//cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+    <script type="text/javascript">
+        CKEDITOR.replace('editor')
+    </script>
+</body>
+</html>
